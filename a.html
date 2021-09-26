@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Studen{
+        name;
+        score;
+
+        constructor(na,sc) {
+            this.name=na;
+            this.score=sc
+        }
+        sleep(){
+          return  this.score=this.score +2;
+        }
+        playgame(){
+          return this.score=this.score+1
+        }
+        get(){
+            return this.name+'có'+this.score +'điểm'
+        }
+        plus(a,score){
+            a.score+=score
+        }
+    }
+    let h1=new Studen('dddd',3)
+    alert(h1.playgame())
+
+
+</script>
+</body>
+</html>
