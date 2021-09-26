@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form>
+    <p>
+        <input id="inputFahrenheit" onchange="kf.f(this.value)"
+               oninput="kf.f(this.value)"
+               placeholder="Fahrenheit"
+               type="number">
+    </p>
+    <p>độ F: <span id="outputCelsius"></span></p>
+    <p>độ k: <span id="outputCelsiu"></span></p>
+</form>
+
+<script>
+    class Temperature {
+        constructor(valNum) {
+            this.valNum = valNum
+        }
+
+   f(valNum) {
+       valNum = parseFloat(valNum)
+            document.getElementById("outputCelsius").innerHTML = (valNum *1.8) +32;
+            document.getElementById("outputCelsiu").innerHTML =valNum+273.15 ;
+        }
+
+    }
+    let kf=new Temperature()
+</script>
+</body>
+</html>

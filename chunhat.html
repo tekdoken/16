@@ -26,14 +26,13 @@
             ctx.stroke();
         }
         dienTich() {
-document.getElementById("dt").innerHTML='diện tích hình chữ nhật là: '+ hinh.width*hinh.height
+document.getElementById("dt").innerHTML='diện tích hình là: '+ hinh.width*hinh.height
         }  chuVi() {
-document.getElementById("cv").innerHTML='chu vi hình chữ nhật là: '+ ((hinh.width+hinh.height)*2)
+document.getElementById("cv").innerHTML='chu vi hình là: '+ ((hinh.width+hinh.height)*2)
         }
     }
 
-    // let hinh = new HinhNhat(50,50, +prompt('dai'), +prompt('rong'));
-    let hinh = new HinhNhat(20, 20, 100, 50)
+    let hinh = new HinhNhat(50,50, +prompt('dai'), +prompt('rong'));
     hinh.veHinhNhat();
     hinh.dienTich()
     hinh.chuVi()
