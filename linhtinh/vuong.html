@@ -43,12 +43,10 @@
         }
     }
 
-    let square = new Square(100, 0, 0, "green")
     for (let i = 0; i < 10; i++) {
         let x = Math.floor(Math.random() * 400)
         let y = Math.floor(Math.random() * 400)
-        square.x = x
-        square.y = y
+        let square = new Square(100, x, y, 'green')
         square.drawSquare()
     }
 </script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas height="500px" id="myCanvas" style="border:1px solid #d3d3d3;" width="780px"></canvas>
+<script>
+  class Rectangle {
+    width;
+    height;
+    x
+    y
+    color
+    ;
+
+    constructor(x,y,width, height,color) {
+      this.width = width
+      this.height = height
+      this.x = x
+      this.y = y
+      this.color = color
+
+    }
+
+    setWidth(width) {
+      this.width = width;
+    }
+
+    setHeight(height) {
+      this.height = height;
+    }
+
+    getArea() {
+      return this.width * this.height
+    }
+
+    getPeri() {
+      return this.width * 2 + this.height * 2
+    }
+
+    drawCanvas(ctx) {
+      ctx.fillStyle = this.color
+      ctx.fillRect(this.x, this.y, this.width, this.height)
+    }
+  }
+  let ctx = document.getElementById('myCanvas').getContext('2d')
+
+
+  for (let i =0;i<10;i++){
+    let x = Math.random()*500
+    let y = Math.random()*500
+    // let color = getRandomColor()
+    let sq = new Rectangle(x,y,50,50,'green')
+    sq.drawCanvas(ctx)
+  }
+
+</script>
+</body>
+</html>

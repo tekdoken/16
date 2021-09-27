@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class mobilePhone {
+        battery;
+        drafts;
+        inbox;
+        sent;
+        mode = false;
+
+        constructor() {
+            this.battery = 100
+            this.drafts = ''
+            this.inbox = ''
+            this.sent = ''
+        }
+
+        charge() {
+            if (this.battery < 100) {
+                this.battery++
+            }
+        }
+
+        turnOnOff() {
+            if (this.mode === true) {
+                this.mode = false
+            } else {
+                this.mode = true
+            }
+        }
+
+        newMessage(message) {
+            if (this.battery <= 0) {
+                alert('you need to charge your phone now')
+            } else {
+                if (this.mode === true) {
+                    this.drafts += message
+                    this.battery--
+                }
+
+            }
+        }
+
+        receiveMessage(message) {
+            if (this.battery <= 0) {
+                alert('you need to charge your phone now')
+            } else {
+                if (this.mode === true) {
+                    this.inbox += message
+                    this.battery--
+                }
+            }
+        }
+
+        sendMessage(to, message) {
+            if (this.battery <= 0) {
+                alert('you need to charge your phone now')
+            } else {
+                if (this.mode === true) {
+                    to.inbox += message
+                    this.battery--
+                }
+            }
+        }
+
+        showInbox() {
+
+            if (this.battery <= 0) {
+                alert('you need to charge your phone now')
+            } else {
+                if (this.mode === true) {
+                    console.log(this.inbox)
+                    this.battery--
+                }
+            }
+        }
+
+        showSent() {
+            if (this.battery <= 0) {
+                alert('you need to charge your phone now')
+            } else {
+                if (this.mode === true) {
+                    console.log(this.sent)
+                    this.battery--
+                }
+            }
+        }
+
+
+    }
+
+    let nokia = new mobilePhone()
+    let iphone = new mobilePhone()
+    nokia.turnOnOff()
+    nokia.sendMessage(iphone, 'how was your day')
+    iphone.turnOnOff()
+    iphone.showInbox()
+
+</script>
+</body>
+</html>

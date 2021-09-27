@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="cv" width="300" height="500" style="border: 1px solid"></canvas>
+<button onclick="moveSquare()">Ấn đi :))</button>
+<script>
+    class Square {
+
+        constructor(side, x, y, color,sx,sy) {
+            this.side = side;
+            this.x = x;
+            this.y = y;
+            this.color = color;
+            this.sx=sx;
+            this.sy=sy;
+        }
+
+        setSide(side) {
+            this.side = side;
+        }
+
+        getPerimeter() {
+            return this.side * 4;
+        }
+
+        getArea() {
+            return this.side ** 2;
+        }
+
+        draw(ctx) {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.side, 0, 2 * Math.PI);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        moveLeft() {
+            this.x += this.sx;
+        }
+
+        moveDown() {
+            this.y += this.sy;
+            this.check()
+        }
+        check(){
+            if (this.y<0||this.y>500-this.side){
+                this.sy = -this.sy
+            }
+            if (this.x<0||this.x>300-this.side){
+                this.sx = -this.sx
+            }
+        }
+    }
+
+    let ctx = document.getElementById('cv').getContext('2d');
+    let sq = new Square(20, 0, 0, 'red',2,2);
+    // let sq1 = new Square(30, 50, 50, 'green',2,2);
+    moveSquare();
+    // moveSquare1()
+    function moveSquare() {
+        ctx.clearRect(0,0,500,500);
+        sq.moveLeft()
+        sq.moveDown();
+        sq.draw(ctx);
+        window.requestAnimationFrame(moveSquare)
+    }
+    // function moveSquare1() {
+    //     ctx.clearRect(sq1.x,sq1.y,sq1.side);
+    //     sq1.moveLeft()
+    //     sq1.moveDown();
+    //     sq1.draw(ctx);
+    //     window.requestAnimationFrame(moveSquare1)
+    // }
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var person1 = new Object({
+        name: 'Chris',
+        age: 38,
+        greeting: function() {
+            alert('Hi! I\'m ' + this.name + '.');
+        }
+    });
+    var person2 = Object.create(person1);
+</script>
+</body>
+</html>

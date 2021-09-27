@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas height="300px" id="myCanvas" style="border:1px solid #d3d3d3;" width="780px"></canvas>
+<p id="dt"></p>
+<p id="cv"></p>
+<script>
+
+    class HinhNhat {
+        constructor(x, y, dai, rong) {
+            this.x = x
+            this.y = y
+            this.height = rong;
+            this.width = dai
+        }set(dai,rong){
+            this.height=rong;
+            this.width=dai
+        }
+
+        veHinhNhat() {
+            let ctx = document.getElementById("myCanvas").getContext("2d");
+            ctx.beginPath();
+            ctx.rect(hinh.x, hinh.y, hinh.width, hinh.height);
+            ctx.stroke();
+            ctx.closePath()
+        }
+        dienTich() {
+            document.getElementById("dt").innerHTML='diện tích hình là: '+ hinh.width*hinh.height
+        }  chuVi() {
+            document.getElementById("cv").innerHTML='chu vi hình là: '+ ((hinh.width+hinh.height)*2)
+        }
+    }
+
+    let hinh = new HinhNhat(50,50, 100, 100);
+    hinh.veHinhNhat();
+    hinh.dienTich()
+    hinh.chuVi()
+    hinh.set(50,50)
+    hinh.veHinhNhat();
+    hinh.dienTich()
+    hinh.chuVi()
+</script>
+</body>
+</html>
