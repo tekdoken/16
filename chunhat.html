@@ -18,7 +18,6 @@
             this.height = rong;
             this.width = dai
         }
-
         veHinhNhat() {
             let ctx = document.getElementById("myCanvas").getContext("2d");
             ctx.beginPath();
@@ -31,13 +30,11 @@ document.getElementById("dt").innerHTML='diện tích hình là: '+ hinh.width*h
 document.getElementById("cv").innerHTML='chu vi hình là: '+ ((hinh.width+hinh.height)*2)
         }
     }
-
     let hinh = new HinhNhat(50,50, +prompt('dai'), +prompt('rong'));
     hinh.veHinhNhat();
     hinh.dienTich()
     hinh.chuVi()
     hinh.veHinhNhat()
 </script>
-
 </body>
 </html>
