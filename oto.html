@@ -21,18 +21,18 @@
         }
 
         up() {
-            this.top -= 8;
+            this.top -= 50;
         }
 
         down() {
-            this.top += 8;
+            this.top += 50;
         }
         le() {
-            this.left-= 8;
+            this.left-= 45;
         }
 
         right() {
-            this.left += 8;
+            this.left += 45;
         }
     }
 
@@ -51,7 +51,8 @@
 
     function upkey(w) {
         if (w.keyCode === 87) {
-            upup()
+         window.requestAnimationFrame(upup)
+
         }
     }
 
