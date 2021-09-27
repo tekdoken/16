@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas height="500px" id="myCanvas" style="border:1px solid #d3d3d3;" width="780px"></canvas>
+
+<script>
+    class Square {
+        x;
+        y;
+        sideLength;
+        color;
+
+        constructor(length, x, y, color) {
+            this.sideLength = length
+            this.x = x;
+            this.y = y;
+            this.color = color
+        }
+
+        getPerimeter() {
+            return this.sideLength * 4
+        }
+
+        setSideLength(length) {
+            this.sideLength = length
+        }
+
+        getArea() {
+            return this.sideLength ** 2
+        }
+
+        drawSquare() {
+            let ctx = document.getElementById("myCanvas").getContext("2d")
+            ctx.beginPath();
+            ctx.rect(this.x, this.y, this.sideLength, this.sideLength);
+            ctx.strokeStyle = this.color
+            ctx.stroke();
+            ctx.closePath()
+        }
+    }
+
+    let square = new Square(100, 0, 0, "green")
+    for (let i = 0; i < 10; i++) {
+        let x = Math.floor(Math.random() * 400)
+        let y = Math.floor(Math.random() * 400)
+        square.x = x
+        square.y = y
+        square.drawSquare()
+    }
+</script>
+</body>
+</html>
