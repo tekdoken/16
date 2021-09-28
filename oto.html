@@ -27,15 +27,16 @@
         down() {
             this.top += 50;
         }
+
         le() {
-            this.left-= 45;
+            this.left -= 45;
         }
 
         right() {
             this.left += 45;
         }
-    }
 
+    }
     let oto = new Oto('ly.jpg', 250, 555, 40, 80);
     document.getElementById('game').innerHTML = oto.getHeroElement();
 
@@ -51,7 +52,7 @@
 
     function upkey(w) {
         if (w.keyCode === 87) {
-         window.requestAnimationFrame(upup)
+            upup()
 
         }
     }
@@ -63,16 +64,18 @@
 
     function dokey(w) {
         if (w.keyCode === 83) {
-           dodo()
+            dodo()
         }
-    } function lele() {
+    }
+
+    function lele() {
         oto.le();
         document.getElementById('game').innerHTML = oto.getHeroElement();
     }
 
     function lekey(w) {
         if (w.keyCode === 65) {
-           lele()
+            lele()
         }
     }
 
@@ -83,7 +86,7 @@
 
     function rikey(w) {
         if (w.keyCode === 68) {
-           riri()
+            riri()
         }
     }
 
